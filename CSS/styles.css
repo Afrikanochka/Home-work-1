@@ -3,6 +3,7 @@
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --primary-bg-color: #ffffff;
+  --card-set-gap: 40px;
 }
 
 .page {
@@ -63,32 +64,38 @@
 
 /* Section */
 .container {
-  max-width: 1200px;
-  padding: 5px;
+  width: 960px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 }
 .card-set {
+  padding: 0;
+  margin: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
-  list-style: none;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
 }
-.item {
+.card-set > .item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-content {
   padding: 10px;
-  margin-left: 10px;
+}
+.card-text {
   margin-top: 10px;
-  flex-basis: calc((100% - 40px) / 4);
-  background-color: #ffffff;
-  border-radius: 4px;
-}
-.item h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-.item p {
-  margin: 0;
 }
 .no-active {
   display: none;
@@ -105,14 +112,6 @@
 }
 
 /* Main */
-.page-main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #607d8b;
-  border-radius: 4px;
-}
 
 .main-logo {
   padding: 15px;
@@ -187,52 +186,6 @@
   background-color: palevioletred;
 }
 
-.card {
-  max-width: 320px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 4px;
-  overflow: hidden;
-  background-color: #f44336;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-.card-image {
-  max-width: 100%;
-  height: auto;
-}
-.card-gap {
-  display: inline-block;
-}
-.card-heading {
-  margin: 0;
-  padding: 20px;
-  font-weight: 500;
-  background-color: #03a9f4;
-}
 .list-item:nth-child(3n + 1) {
   background-color: orange;
-}
-.contain {
-  display: flex;
-  max-width: 960px;
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.sidebar {
-  flex-basis: 250px;
-  margin-right: 24px;
-}
-.content {
-  flex-grow: 1;
-}
-.sidebar,
-.content {
-  height: 350px;
-  padding: 20px;
-  border-radius: 4px;
-  background-color: #ffffff;
 }
